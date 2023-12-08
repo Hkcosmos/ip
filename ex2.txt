@@ -1,0 +1,187 @@
+Home.html:
+<html>
+<head>
+<link rel="stylesheet" href="a.css">
+<title> WayFar Travel Website</title>
+</head>
+<body>
+<header>
+<h1>WAYFAR TRAVEL</h1>
+</header>
+<nav>
+<ul>
+<li><a class="active" href="Home.html">Home</a></li>
+<li><a href="place.html">Famous places</a></li>
+<li><a href="Booking.html">Ticket Booking</a></li>
+</ul>
+</nav>
+<div class="lineblock">
+9
+71812105034 – HARIKARTHIK SM
+<div class="i">
+<img src="travel.jpg" >
+</div>
+<div class="p">
+A comfort zone is a beautiful place… but nothing ever grows there.
+</div>
+</div>
+</body>
+<footer style="color: gray;">
+<h5>Copyrights@2022.All Rights Reserved.</h5>
+</footer>
+</html>
+Places.html
+<html>
+<head>
+<link rel="stylesheet" href="a.css">
+<title> WayFar Travel Website</title>
+</head>
+<body>
+<header>
+<h1>WAYFAR TRAVEL</h1>
+</header>
+<nav>
+<ul>
+<li><a href="a.html">Home</a></li>
+<li><a class="active" href="place.html">Famous places</a></li>
+<li><a href="Booking.html">Ticket Booking</a></li>
+</ul>
+</nav>
+<div>
+<div class="design"><a
+href="https://en.wikipedia.org/wiki/Coimbatore">COIMBATORE</a></div>
+<div class="design"><a
+href="https://en.wikipedia.org/wiki/Chennai">CHENNAI</a></div>
+<div class="design"><a href="https://en.wikipedia.org/wiki/Erode">ERODE</a></div>
+<div class="design"><a
+href="https://en.wikipedia.org/wiki/Salem,_Tamil_Nadu">SALEM</a></div>
+<div class="design"><a
+href="https://en.wikipedia.org/wiki/Kumbakonam">KUMBAKONAM</a></div>
+<div class="design"><a
+href="https://en.wikipedia.org/wiki/Madurai">MADURAI</a></div>
+</div>
+</body>
+<footer style="color: gray;" class="scroll">
+<h5>Copyrights@2022.All Rights Reserved.</h5>
+</footer>
+</html>
+10
+71812105034 – HARIKARTHIK SM
+style.css
+ul {
+list-style-type: none;
+padding: 0;
+overflow: hidden;
+top:0;
+background-color:pink;
+width: 100%;
+}
+body{
+background-color:lightskyblue;
+}
+header{
+font-style: italic;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+margin-top: 3%;
+width: 100%;
+background-color:aquamarine;
+color: darkslategray;
+}
+li {
+float: left;
+}
+li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+li a.active {
+background-color: #04AA6D;
+color: white;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover:not(.active) {
+background-color: #555;
+color: white;
+}
+footer{
+clear:both;
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+text-align: center;
+}
+.scroll{
+clear:both;
+position:relative;
+bottom:0;
+left:0;
+width:100%;
+text
+-align: center;
+}
+.lineblock {
+display: flex;
+float:left;
+margin
+-top: 3%;
+margin
+-left: 3%;
+}
+.i{
+border: #333; }
+.p{
+margin
+-top: 3%;
+border
+-style: dashed;
+text
+-align: center;
+padding: 2.5%;
+background
+-color: antiquewhite;
+text
+-align: center;
+margin
+-left: 3%;
+}
+.design{
+background
+-color: lightgrey;
+width: 300px;
+border: 15px solid green;
+padding: 50px;
+display: flex;
+float:left;
+margin: 20px;
+margin
+-top: 3%;
+margin
+-left: 3%;
+}
+.designclear{
+background
+-color: lightgrey;
+width: 300px;
+border: 15px plum;
+padding: 50px;
+margin: 20px;
+clear: left;
+float:left;
+margin
+-top: 3%;
+margin
+-left: 3%;
+display: flex;
+}
+div a{
+text
+-align: center;
+color:#333;
+text
+-decoration: none;
+}

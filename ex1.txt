@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BIODATA</title>
+</head>
+<body>
+<header>
+<h1>MY BIODATA</h1>
+<h4>NIKITHA U P</h4>
+<address>
+75,
+krishnasamy street,
+municipal colony,
+Erode
+</address>
+<h4>nikitha.2005101@srec.ac.in</h4>
+<h4>6383450061</h4>
+<img src="E:\INTERNET PROGRAMMING\biodata in ip\flower.jpg" alt="profile
+photo">
+</header>
+<article>
+<section>
+<h4>OBJECTIVE:</h4>
+<p>
+2
+71812105034 – HARIKARTHIK SM
+To secure a challenging position in a reputed organization to expand my
+learnings, skills and knowledge.
+</p>
+<table border="2">
+<tbody><tr>
+<th>Standard</th>
+<th>Medium</th>
+<th>Board</th>
+<th>Institution</th>
+<th>Percentage/CGPA</th>
+</tr>
+<tr>
+<td>SSLC</td>
+<td>ENGLISH</td>
+<td>State Board</td>
+<td>Vivekananda Memorial Matriculation School ,Palada</td>
+<td>94.08%</td>
+</tr>
+<tr>
+<td>HSC</td>
+<td>ENGLISH</td>
+<td>State Board</td>
+<td>Stanes Anglo Indian Higher Secondary School, Coonoor</td>
+<td>96%</td>
+</tr>
+<tr>
+<td>B.Tech IT SEM-3</td>
+<td>ENGLISH</td>
+<td>AICTE</td>
+<td>Sri Ramakrishna Engineering College, Coimbatore</td>
+<td>8.2</td>
+</tr>
+</tbody></table>
+<ul style="list-style: square">
+<h2>Programming Skills</h2>
+<li>C Programming</li>
+<li>Python Programming</li>
+<li>C++</li>
+<li>Java</li>
+</ul>
+<ul>
+<h4>PROJECTS</h4>
+<li>Deploying application using Docker and Kubernetes</li>
+<li>Face Mask Alert System</li>
+</ul>
+<ul>
+<img> LinkedIn:<a href="#">nikitha-u-p</a><br><br>
+<img> Instagram: <a href="#">nikitha.26_</a><br><br>
+</ul>
+<ul>
+<h4>PARTICIPATION AND CERTIFICATIONS</h4>
+3
+71812105034 – HARIKARTHIK SM
+</ul>
+</section>
+</article>
+</body>
+</html>
