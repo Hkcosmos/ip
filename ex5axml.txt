@@ -1,0 +1,69 @@
+television.html:
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="s.css"?>
+<!DOCTYPE BEA [
+<!ELEMENT BEA (BEA*)>
+<!ELEMENT tv (name,type,screen_size,resolution,price,viewing_angle,os)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT screen_size (#PCDATA)>
+<!ELEMENT resolution (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT viewing_angle (#PCDATA)>
+<!ELEMENT os (#PCDATA)>
+<!ATTLIST tv brand (CDATA) #REQUIRED>
+]>
+<BEA>
+<tv brand="LG">
+17
+71812105034 – HARIKARTHIK SM
+<name>LG</name>
+<type>LED</type>
+<screen_size>32 inch</screen_size>
+<resolution>1080</resolution>
+<price>40,000</price>
+<viewing_angle>20</viewing_angle>
+<os>Android</os>
+</tv>
+<tv brand="MI">
+<name>MI</name>
+<type>OLED</type>
+<screen_size>40 inch</screen_size>
+<resolution>4K</resolution>
+<price>50,000</price>
+<viewing_angle>30</viewing_angle>
+<os>MIUI</os>
+</tv>
+<tv brand="Sony">
+<name>Sony</name>
+<type>LED</type>
+<screen_size>42 inch</screen_size>
+<resolution>4K</resolution>
+<price>70,000</price>
+<viewing_angle>50</viewing_angle>
+<os>Android</os>
+</tv>
+</BEA>
+s.css
+BEA
+{
+margin:10px;
+background-color:pink;
+font-family:verdana;
+}
+18
+71812105034 – HARIKARTHIK SM
+name
+{
+display:block;
+font-weight:bold;
+text-align: center;
+line-break: auto;
+}
+type,screen_size,resolution,price,viewing_angle,os
+{
+text-align: center;
+display:block;
+color:blue;
+font-size:small;
+font-style:italic;
+}

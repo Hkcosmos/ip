@@ -1,0 +1,214 @@
+app.component.ts:
+import { Component } from '@angular/core';
+@Component({
+selector: 'app-root',
+templateUrl: './app.component.html',
+styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+title= "Angular Kitchen";
+changeName() {
+this.title="Typescript";
+}
+run:boolean=false;
+user=[{name:'Gopi',age:26,gender:'m'},{name:'kannan',age:35,gender:'m'},
+{name:'john',age:23,gender:'m'},
+{name:'Hasini',age:34,gender:'f'}];
+colorName='yellow';
+color='red';
+borderStyle = '1px solid black';
+isBordered = true;
+name: string = "Angular";
+day=new Date();
+num=2345.57898766;
+n=20;
+}
+app.component.html:
+<div class="container">
+<div>
+<h1>Templates</h1>
+<p>Hello world...</p>
+<p>1 + 2 = {{ 1+2 }}</p>
+<p>10 is {{ 10%2==0?'Even':'Odd' }}</p>
+</div>
+<hr>
+<h1>Template Statement- events </h1>
+<p>Welcome {{title|uppercase}} </p>
+<p (click) = "changeName()">Click Me</p>
+<hr>
+<h1>Structural Directives</h1>
+<div *ngIf="run">
+<p>My App is running</p>
+</div>
+<div *ngFor="let u of user">
+{{u.name}}
+{{u.age}}
+</div>
+<div *ngFor="let u of user">
+<div [ngSwitch]="u.gender">
+<div *ngSwitchCase="'m'" id="male">
+{{u.name}}
+</div>
+<div *ngSwitchCase="'f'" id="female">
+{{u.name}}
+</div>
+</div>
+</div>
+<hr>
+<h1>Attribute Directives</h1>
+<div [style.background-color]="colorName" [style.color]="color"
+[style.border]="borderStyle">
+Uses fixed yellow background
+</div>
+<p [ngStyle]="{
+color:colorName,
+borderBottom: borderStyle
+}">
+Demo for attribute directive ngStyle
+</p>
+<div [class.bordered]="isBordered">
+Border {{ isBordered ? "ON" : "OFF" }}
+</div>
+<input type="text" [(ngModel)]="name">
+<br/>
+<div>Hello , {{ name }}</div>
+<hr>
+<h1>Pipes</h1>
+<p>{{name|uppercase}}</p>
+<p>{{name|lowercase}}</p>
+<p>{{name|titlecase}}</p>
+<p>{{day|date}}</p>
+<p>{{day|date:'dd-MMM-yy'}}</p>
+<p>{{num|number}}</p>
+<p>{{num|number:'5.2-4'}}</p>
+<p>{{n|percent}}</p>
+<p>{{n|currency}}</p>
+<hr>
+<h1>Hello Component</h1>
+<app-hello></app-hello>
+<h1>App Component</h1>
+<div class="p-2">
+<header class="border border-secondary">
+<h1 class="text-center">{{title}} </h1>
+</header>
+</div>
+<div class="p-2">
+<section class="p-1 border border-secondary">
+<nav class="nav nav-pills nav-justified">
+<p>Navigation links</p>
+<a class="nav-link" [routerLink]="['/hello']" routerLinkActive="active">Hello</a>
+<a class="nav-link" [routerLink]="['/header']" routerLinkActive="active">Header</a>
+</nav>
+</section>
+</div>
+<div class="p-2">
+<section class="p-1 border border-secondary">
+<router-outlet> </router-outlet>
+</section>
+</div>
+<div class="p-2">
+<section class="p-1 border border-secondary">
+<h2>demos will appear here</h2>
+</section>
+</div>
+<h1>Footer Component</h1>
+<app-footer></app-footer>
+</div>
+app.component.css:
+span{
+color:blue
+}
+#male
+{
+background-color: blueviolet;
+}
+#female
+{
+background-color: deeppink;
+}
+.bordered {
+border: 1px dashed black;
+background-color: #eee;
+}
+app.module.ts:
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HelloComponent } from './hello/hello.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+@NgModule({
+declarations: [
+AppComponent,
+HelloComponent,
+FooterComponent,
+HeaderComponent
+],
+imports: [
+BrowserModule,
+AppRoutingModule,
+FormsModule
+],
+providers: [],
+bootstrap: [AppComponent]
+})
+export class AppModule { }
+app-routing.module.ts:
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { HelloComponent } from './hello/hello.component';
+const routes: Routes = [{ path:'hello',component:HelloComponent},
+{ path:'header',component:HeaderComponent},
+{ path: '', redirectTo: '/hello', pathMatch: 'full' },];
+@NgModule({
+imports: [RouterModule.forRoot(routes)],
+exports: [RouterModule]
+})
+export class AppRoutingModule { }
+hello.component.html:
+<p>hello works!</p>
+<p>
+Hello {{ courseName }}
+</p>
+hello.component.css:
+p {
+color:chocolate;
+font-size:20px;
+}
+hello.component.spec.ts:
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HelloComponent } from './hello.component';
+describe('HelloComponent', () => {
+let component: HelloComponent;
+let fixture: ComponentFixture<HelloComponent>;
+beforeEach(async () => {
+await TestBed.configureTestingModule({
+declarations: [ HelloComponent ]
+})
+.compileComponents();
+});
+beforeEach(() => {
+fixture = TestBed.createComponent(HelloComponent);
+component = fixture.componentInstance;
+fixture.detectChanges();
+});
+it('should create', () => {
+expect(component).toBeTruthy();
+});
+});
+hello.component.ts:
+import { Component, OnInit } from '@angular/core';
+@Component({
+selector: 'app-hello',
+templateUrl: './hello.component.html'
+styleUrls: ['./hello.component.css']
+})
+export class HelloComponent implements OnInit {
+courseName: string = "Angular";
+constructor() { }
+ngOnInit(): void {
+}
+}

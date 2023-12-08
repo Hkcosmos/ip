@@ -1,0 +1,124 @@
+var mysql = require('mysql');
+const express=require('express');
+var connection=mysql.createConnection({
+host:"localhost",
+user:"root",
+password:"vaishu",
+database:"product" //this line entered after database creation
+});
+connection.connect(function(err)
+{
+if(err)
+throw err;
+console.log("connection successful");
+});
+const app=express()
+//create database product
+app.get('/createproduct',(req,res)=>{
+let sql='CREATE DATABASE product'
+connection.query(sql,(err)=>{
+if(err)
+{
+throw err;
+}
+res.send("Database created");
+});
+});
+//create table chocolates
+app.get('/createchocolates',(res,req)=>{
+let sql='CREATE TABLE chocolates(pid int AUTO_INCREMENT,nameVARCHAR(30),price
+integer,PRIMARY KEY(pid))'
+connection.query(sql,(err)=>{
+if(err)
+{
+throw err;
+}
+res.send("stationary table created");
+});
+});
+app.get('/createstat',(res,req)=>{
+let sql='CREATE TABLE stationary(pid int AUTO_INCREMENT,name
+VARCHAR(30),price integer,PRIMARY KEY(pid))'
+connection.query(sql,(err)=>{
+if(err)
+{
+throw err;
+}
+res.send("stationary table created");
+});
+54
+71812105034 – HARIKARTHIK SM
+});
+//insert data into tables
+app.get('/chocolate1',(req,res)=>
+{
+let post={name:'Nutties',price:100}
+let sql='INSERT INTO chocolates SET ?' let query=connection.query(sql,post,err=>{
+if(err)
+{
+throw err;
+}
+res.send("Chocolate added");
+});
+});
+app.get('/stationary1',(req,res)=>
+{
+let post={name:'Poster Colours',price:500}let sql='INSERT INTO stationary SET ?' let
+query=connection.query(sql,post,err=>{
+if(err)
+{
+throw err;
+}
+res.send("Stationary added");
+});
+});
+//select chocolates & stationary
+app.get('/getchocolates',(req,res)=>{
+let sql='SELECT * FROM chocolates'
+let query = connection.query(sql,(err,results)=>{if(err)
+{
+throw err;
+}
+console.log(results);
+res.send("Chocolates fetched");
+});
+});
+app.get('/getstat',(req,res)=>{
+let sql='SELECT * FROM stationary'
+let query = connection.query(sql,(err,results)=>{
+if(err)
+{
+throw err;
+}
+console.log(results);
+res.send(" Stationary fetched");
+});
+});
+// update chocolates
+55
+71812105034 – HARIKARTHIK SM
+app.get('/updatechoco/:pid',(req,res)=>{
+let newName='Diary Milk'
+let sql=`UPDATE chocolates SET name='${newName}' WHERE pid= ${req.params.pid}
+`;
+let query = connection.query(sql,(err,results)=>{
+if(err)
+{
+throw err;
+}
+res.send(" Chocolate updated");
+});
+});
+//deletion of chocolate app.get('/deletechoco/:pid',(req,res)=>{
+let sql=`DELETE FROM chocolates WHERE pid= ${req.params.pid}`;let query =
+connection.query(sql,(err,results)=>{
+if(err)
+{
+throw err;
+}
+res.send(" Chocolate deleted");
+});
+});
+app.listen('3000',()=>{
+console.log("server started at port 3000");
+})

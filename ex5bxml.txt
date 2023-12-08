@@ -1,0 +1,69 @@
+Food.html:
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<food>
+<title>Food recipes</title>
+<section>
+<name>Noodles</name>
+<i1>Water</i1>
+<i2>Masala</i2>
+<i3>Noodles</i3>
+<i4>Salt</i4>
+<recipe>Recipe: Boil 6 cups water in a large pot or a deep pan and bring it to boil over
+medium flame. When it comes to rolling boil, add dried noodles,
+1/2 tablespoon oil and 1/2 teaspoon salt. Boil until noodles are soft, it will take
+around 4-5 minutes. Stir occasionally in between.</recipe>
+</section>
+<section>
+<name>Coconut chutney</name>
+<i1>coconut</i1>
+<i2>green chillies</i2>
+<i3>ginger and chana dal</i3>
+20
+71812105034 – HARIKARTHIK SM
+<i4>Salt</i4>
+<i5>water</i5>
+<recipe>Recipe: Coconut chutney is made by grinding coconut, green chillies,
+ginger and chana dal with water to a fine paste. Then a tempering
+of mustard seeds, red chilli and curry leaves is added to the fine paste to make
+nariyal chutney.</recipe>
+</section>
+<section>
+<name>Kesari</name>
+<i1>rava </i1>
+<i2>sugar</i2>
+<i3>ghee</i3>
+<i4>saffron and dry fruits</i4>
+<recipe>Recipe: Kesari recipe is a popular and delicious South Indian sweet
+made from rava (cream of wheat), sugar, ghee (clarified butter), saffron and dry fruits. This
+melt in the mouth orange-colored sweet is alsoknown as Rava Kesari.</recipe>
+</section>
+</food>
+Style.css
+food {
+font-size:60;
+margin:0.5em;
+font-family: ThreeDShadow;
+display:block;}
+section {
+display:block;
+border: 1px yellow;
+margin:0.5em;
+padding:0.5em;
+background-color:olive;}
+title {
+display:block;
+font-weight:bolder;
+text-align:center;
+font-size:30px;
+background-color:bl;
+color:brown;}
+name, i1,i2,i3,i4,i5{
+name {
+color:cyan;
+display:block;
+text-align:cente }
+text-decoration: underline ;
+font-weight:bolder;
+font-size:20px;
+}
